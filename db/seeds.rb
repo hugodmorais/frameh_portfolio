@@ -9,7 +9,7 @@
 10.times do
     Blog.create([{
         title: Faker::Name.name, 
-        body: Faker::Lorem.characters
+        body: Faker::Lorem.sentence
     }])
 end
 
@@ -28,9 +28,9 @@ puts "10 skills created!"
     Portfolio.create([{
         title: Faker::Name.name, 
         subtitle: Faker::Name.name,
-        body: Faker::Lorem.characters,
-        main_image: Faker::LoremPixel.image("600x400"),
-        thumb_image: Faker::LoremPixel.image("350x200")
+        body: Faker::Lorem.sentence,
+        main_image: "https://via.placeholder.com/600x400",
+        thumb_image: "https://via.placeholder.com/350x200"
     }])
 end
 

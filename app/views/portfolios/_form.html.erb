@@ -1,0 +1,25 @@
+<%= form_for portfolio_item do |f| %>  
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :subtitle %>
+    <%= f.text_field :subtitle, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :body %>
+    <%= f.text_field :body, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :subtitle %>
+    <%= f.text_field :subtitle, class: 'form-control' %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -17,7 +17,6 @@ class BlogsController < ApplicationController
 
   def create
     @blog = Blog.new(blog_params)
-
     respond_to do |format|
       if @blog.save
         format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
@@ -46,11 +45,11 @@ class BlogsController < ApplicationController
 
   private
 
-    def set_blog
-      @blog = Blog.find(params[:id])
-    end
+  def set_blog
+    @blog = Blog.find(params[:id])
+  end
 
-    def blog_params
-      params.require(:blog).permit(:title, :body)
-    end
+  def blog_params
+    params.require(:blog).permit(:title, :body)
+  end
 end
