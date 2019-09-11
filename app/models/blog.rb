@@ -10,6 +10,7 @@ class Blog < ApplicationRecord
     # Delegates
     
     # Constants
+    enum status: { draft: 0, published: 1 }
     
     # Scopes
     
