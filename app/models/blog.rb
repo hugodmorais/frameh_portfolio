@@ -1,6 +1,8 @@
 class Blog < ApplicationRecord
     # Includes
-    
+    extend FriendlyId
+    friendly_id :title, use: :slugged
+
     # Attributes
     
     # Associations
