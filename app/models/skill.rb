@@ -1,8 +1,6 @@
-class Blog < ApplicationRecord
+class Skill < ApplicationRecord
     # Includes
-    extend FriendlyId
-    friendly_id :title, use: :slugged
-
+    
     # Attributes
     
     # Associations
@@ -10,7 +8,6 @@ class Blog < ApplicationRecord
     # Delegates
     
     # Constants
-    enum status: { draft: 0, published: 1 }
     
     # Scopes
     
@@ -31,5 +28,4 @@ class Blog < ApplicationRecord
     # Validations
     
     # Instance Private methods
-    
 end

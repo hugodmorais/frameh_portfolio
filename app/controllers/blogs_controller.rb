@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :set_blog, only: [:show, :edit, :update, :destroy, :toogle_status]
 
   def index
     @blogs = Blog.all
@@ -17,7 +17,6 @@ class BlogsController < ApplicationController
 
   def create
     @blog = Blog.new(blog_params)
-
     respond_to do |format|
       if @blog.save
         format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
@@ -44,13 +43,22 @@ class BlogsController < ApplicationController
     end
   end
 
+  def toogle_status
+    if @blog.draft?
+      @blog.published!
+    elsif @blog.published?
+      @blog.draft!
+    end
+    redirect_to blogs_url, notice: 'Post status has been updated.'
+  end
+
   private
 
-    def set_blog
-      @blog = Blog.find(params[:id])
-    end
+  def set_blog
+    @blog = Blog.friendly.find(params[:id])
+  end
 
-    def blog_params
-      params.require(:blog).permit(:title, :body)
-    end
+  def blog_params
+    params.require(:blog).permit(:title, :body)
+  end
 end
