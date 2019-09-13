@@ -11,12 +11,13 @@ class Blog < ApplicationRecord
     
     # Constants
     enum status: { draft: 0, published: 1 }
-    
+
     # Scopes
     
     # Callbacks
     
     # Validations
+    validates :title, :body, presence: true
     
     # Constants Methods
     
