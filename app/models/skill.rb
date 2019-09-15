@@ -14,6 +14,7 @@ class Skill < ApplicationRecord
     # Callbacks
     
     # Validations
+    validates :title, :percent_utilized, presence: true
     
     # Constants Methods
     

@@ -14,6 +14,7 @@ class Portfolio < ApplicationRecord
     # Callbacks
     
     # Validations
+    validates :title, :body, :main_image, :thumb_image, presence: true
     
     # Constants Methods
     
