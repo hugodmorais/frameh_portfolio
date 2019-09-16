@@ -5,6 +5,7 @@ class CreateBlogs < ActiveRecord::Migration[5.2]
       t.text :body
       t.integer :status, default: 0
       t.string :slug
+      t.references :topic, foreign_key: true
 
       t.timestamps
     end
