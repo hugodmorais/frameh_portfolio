@@ -43,4 +43,13 @@ puts "10 skills created!"
     }])
 end
 
-puts "10 skills created!"
+puts "9 portfolio created!"
+
+3.times do
+    Portfolio.last.technologies.create([{
+        name: Faker::Name.name, 
+        portfolio_id: Portfolio.last
+    }])
+end
+
+puts "3 technologies created!"

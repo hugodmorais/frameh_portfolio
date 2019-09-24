@@ -4,7 +4,7 @@ class Portfolio < ApplicationRecord
     # Attributes
     
     # Associations
-    
+    has_many :technologies
     # Delegates
     
     # Constants
@@ -28,7 +28,6 @@ class Portfolio < ApplicationRecord
         self.main_image ||= Placeholder.image_generator(height: '600', width: '400')
         self.thumb_image ||= Placeholder.image_generator(height: '600', width: '400')
     end
-    
     
     # Callbacks
     
