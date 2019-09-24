@@ -1,6 +1,7 @@
 class Skill < ApplicationRecord
     # Includes
-    
+    includes Placeholder
+
     # Attributes
     
     # Associations
@@ -12,7 +13,8 @@ class Skill < ApplicationRecord
     # Scopes
     
     # Callbacks
-    
+    after_initialize :set_defaults
+
     # Validations
     validates :title, :percente_utilized, presence: true
     
@@ -24,6 +26,10 @@ class Skill < ApplicationRecord
     
     private
     
+    def set_defaults
+        self.badge ||= Placeholder.image_generator(height: '251', width: '252')
+    end
+
     # Callbacks
     
     # Validations

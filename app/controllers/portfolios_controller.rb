@@ -2,22 +2,25 @@ class PortfoliosController < ApplicationController
     before_action :set_portfolio_item, only: [:show, :edit, :update, :destroy]
 
     def index
-        @portfolio_items = Portfolio.all
+      @portfolio_items = Portfolio.all
+    end
+
+    def show
     end
 
     def new
-        @portfolio_item = Portfolio.new
+      @portfolio_item = Portfolio.new
     end
 
     def create
-        @portfolio_item = Portfolio.new(portfolio_item_params)
+      @portfolio_item = Portfolio.new(portfolio_item_params)
+      respond_to do |format|
         if @portfolio_item.save
-          flash[:success] = "Portfolio successfully created"
-          redirect_to @portfolio_item
+          format.html { redirect_to portfolio_show_path(@portfolio_item), notice: 'Portfolio was successfully created.' }
         else
-          flash[:error] = "Something went wrong"
-          render 'new'
+          format.html { render :new }
         end
+      end
     end
 
     def update
