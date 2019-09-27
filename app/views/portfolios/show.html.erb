@@ -14,6 +14,12 @@
   <%= @portfolio_item.body %>
 </p>
 <p>
+  <strong>Technologies Used:</strong>
+  <% @portfolio_item.technologies.each do |technology| %>
+    <li><%= technology.name %></li>
+  <% end %>
+</p>
+<p>
   <strong>Image:</strong>
   <%= image_tag @portfolio_item.thumb_image unless @portfolio_item.thumb_image.nil? %>
 </p>
