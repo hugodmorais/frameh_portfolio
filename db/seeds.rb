@@ -6,10 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+3.times do |topic|
+    Topic.create!(
+        title: Faker::Movie.quote
+    )
+end
+
+puts "3 topic created!"
+
 10.times do
     Blog.create([{
         title: Faker::Name.name, 
-        body: Faker::Lorem.sentence
+        body: Faker::Lorem.sentence,
+        topic_id: Topic.first
     }])
 end
 
@@ -34,4 +43,13 @@ puts "10 skills created!"
     }])
 end
 
-puts "10 skills created!"
+puts "9 portfolio created!"
+
+3.times do
+    Portfolio.last.technologies.create([{
+        name: Faker::Name.name, 
+        portfolio_id: Portfolio.last
+    }])
+end
+
+puts "3 technologies created!"

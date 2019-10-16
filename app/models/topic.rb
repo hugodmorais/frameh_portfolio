@@ -1,24 +1,21 @@
-class Blog < ApplicationRecord
+class Topic < ApplicationRecord
     # Includes
-    extend FriendlyId
-    friendly_id :title, use: :slugged
-
+    
     # Attributes
     
     # Associations
-    belongs_to :topic
+    has_many :blogs
     # Delegates
     
     # Constants
-    enum status: { draft: 0, published: 1 }
-
+    
     # Scopes
     
     # Callbacks
     
     # Validations
-    validates :title, :body, presence: true
-    
+    validates :title, presence: true
+
     # Constants Methods
     
     # Class methods
