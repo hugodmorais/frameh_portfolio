@@ -1,9 +1,9 @@
-<tr>
-    <td><%= blog.title %></td>
-    <td><%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</td>
-    <td><%= blog.body %></td>
-    <td><%= link_to blog.status, toogle_status_blog_path(blog) %></td>
-    <td><%= link_to 'Show', blog %></td>
-    <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-    <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-</tr>
+<div>
+    <p><%= blog.title %></p>
+    <p><%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</p>
+    <p><%= blog.body %></p>
+    <p><%= link_to blog.status, toogle_status_blog_path(blog) %></p>
+    <p><%= link_to 'Show', blog %></p>
+    <p><%= link_to 'Edit', edit_blog_path(blog) %></p>
+    <p><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+</div>

@@ -7,6 +7,7 @@ class Blog < ApplicationRecord
     
     # Associations
     belongs_to :topic
+    
     # Delegates
     
     # Constants
