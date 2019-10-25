@@ -62,5 +62,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
+gem 'petergate', '~> 2.0', '>= 2.0.1'
+# My own gem
 gem 'frameh_view_tool', git: 'https://github.com/hugodmorais/frameh_view_tool'
