@@ -17,6 +17,7 @@
 
     <%= login_helper %>
     <%= yield %>
+    <%= copyright_generator %>
     <% if session[:source] %>
       Thanks for visiting me from <%= session[:source] %>
     <% end %>
