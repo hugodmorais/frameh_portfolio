@@ -1,11 +1,13 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-8 blog-main">
 
-<h1>Blogs</h1>
+  <h1>Blogs</h1>
 
-<div>
-  <%= render partial: @blogs, spacer_template: 'blog_ruler' %>
+  <div>
+    <%= render partial: @blogs, spacer_template: 'blog_ruler' %>
+  </div>
+
+  <br>
+
+  <%= link_to 'New Blog', new_blog_path if logged_in?(:site_admin) %>
+
 </div>
-
-<br>
-
-<%= link_to 'New Blog', new_blog_path if logged_in?(:site_admin) %>
