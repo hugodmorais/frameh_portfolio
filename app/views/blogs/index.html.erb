@@ -1,13 +1,8 @@
 <div class="col-md-8 blog-main">
+  <h2>My Blog</h2> <%= link_to 'Create new Blog', new_blog_path %>
+  <hr>
+  <%= render partial: @blogs, spacer_template: 'blog_ruler' %>
+ 
 
-  <h1>Blogs</h1>
-
-  <div>
-    <%= render partial: @blogs, spacer_template: 'blog_ruler' %>
-  </div>
-
-  <br>
-
-  <%= link_to 'New Blog', new_blog_path if logged_in?(:site_admin) %>
 
 </div>

@@ -34,6 +34,7 @@
     z-index: 2;
     height: 2.75rem;
     overflow-y: hidden;
+    margin-bottom: 10rem;
   }
   
   .nav-scroller .nav {
@@ -124,5 +125,12 @@
   }
   .blog-footer p:last-child {
     margin-bottom: 0;
+  }
+
+  /*
+   * Custom Css
+  */
+  .blog-main {
+    padding-top: 2rem;
   }
   
