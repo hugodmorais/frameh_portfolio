@@ -1,7 +1,7 @@
-<%= form_with(model: blog, local: true) do |form| %>
+<%= form_with(model: blog, local: true) do |f| %>
   <% if blog.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+      <h4><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h4>
 
       <ul>
       <% blog.errors.full_messages.each do |message| %>
@@ -11,18 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
+  <div class="form-group">
+    <%= f.label :body %>
+    <%= f.text_area :body, class: 'form-control', rows: 10 %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= f.submit 'Create Blog', class: 'btn btn-primary' %>
   </div>
-  <%= params.inspect %>
 <% end %>

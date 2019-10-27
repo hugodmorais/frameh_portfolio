@@ -1,8 +1,10 @@
 <div class="col-md-8 blog-main">
-  <h2>My Blog</h2> <%= link_to 'Create new Blog', new_blog_path %>
+  <h2>My Blog</h2> <%= link_to 'Create new Blog', new_blog_path, class: 'btn btn-primary' %>
   <hr>
   <%= render partial: @blogs, spacer_template: 'blog_ruler' %>
- 
 
-
+  <nav class="blog-pagination">
+    <a class="btn btn-outline-primary" href="#">Older</a>
+    <a class="btn btn-outline-secondary disable" href="#">Newer</a>
+  </nav>
 </div>
