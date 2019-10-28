@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "font-awesome";
 
 /* stylelint-disable selector-list-comma-newline-after */
 
@@ -132,5 +133,9 @@
   */
   .blog-main {
     padding-top: 2rem;
+  }
+
+  .social-links li {
+    font-size: 2rem;
   }
   

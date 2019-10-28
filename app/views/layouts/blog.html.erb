@@ -13,11 +13,7 @@
   </head>
 
   <body>
-    <header class="blog-header py-3">
-      <div class="col-12 text-center">
-        <h2 class="blog-titler" href="#">Blog</h2>
-      </div>
-    </header>
+    <%= render 'shared/blog_masthead' %>
   
     <div class="container">
       <%= render 'shared/blog_nav' %>
@@ -31,11 +27,6 @@
         <%= source_helper %>
       </div>
     </div>
-    <footer class="blog-footer">
-      <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-      <p>
-        <a href="#">Back to top</a>
-      </p>
-    </footer>
+    <%= render 'shared/blog_footer' %>
   </body>
 </html>
