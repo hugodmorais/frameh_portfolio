@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   access all: [:show, :index], user: {except: [:destroy, :toogle_status, :new, :create, :update, :edit]}, site_admin: :all
 
   def index
-    @blogs = Blog.all
+    @blogs = Blog.page(params[:page]).per(1)
     @page_title = "My Portfolio Blog"
   end
 

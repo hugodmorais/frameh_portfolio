@@ -3,8 +3,5 @@
   <hr>
   <%= render partial: @blogs, spacer_template: 'blog_ruler' %>
 
-  <nav class="blog-pagination">
-    <a class="btn btn-outline-primary" href="#">Older</a>
-    <a class="btn btn-outline-secondary disable" href="#">Newer</a>
-  </nav>
+  <%= paginate @blogs %>
 </div>
