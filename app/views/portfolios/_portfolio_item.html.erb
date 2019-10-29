@@ -1,11 +1,10 @@
-<p><%= portfolio_item.title %></p>
 
-<p><%= portfolio_item.subtitle %></p>
-
-<p><%= portfolio_item.body %></p>
-
-<%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %>
-
-<%= link_to "Edit Item", edit_portfolio_path(portfolio_item) if logged_in?(:site_admin) %>
-<%= link_to "Ver", portfolio_show_path(portfolio_item) %>
-<%= link_to "Apagar", portfolio_path(portfolio_item), method: :delete, data: { confirm: "Are you sure?" } if logged_in?(:site_admin) %>
+<div class="col-md-4">
+    <div class="card mb-4 shadow-sm">
+        <%= image_tag portfolio_item.thumb_image, class: "bd-placeholder-img card-img-top", width: "100%", height: "225" unless portfolio_item.thumb_image.nil? %>
+        <div class="card-body">
+            <p class="card-text"><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item) %></p>
+            <p class="card-text"><%= portfolio_item.subtitle %></p>
+        </div>
+    </div>
+</div>
