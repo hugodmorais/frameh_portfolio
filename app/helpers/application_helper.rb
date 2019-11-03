@@ -19,4 +19,54 @@ module ApplicationHelper
     def copyright_generator
         FramehViewTool::Renderer.copyright 'Hugo Morais', 'All rights reserved'
     end
+
+    def nav_items
+        [
+            {
+                url: root_path,
+                title: 'Home'
+            },
+            {
+                url: about_me_path,
+                title: 'About Me'
+            },
+            {
+                url: contact_path,
+                title: 'Contact'
+            },
+            {
+                url: blogs_path,
+                title: 'Blog'
+            },
+            {
+                url: portfolios_path,
+                title: 'Portfolio'
+            }
+        ]
+    end
+    def nav_helper style, tag_type
+        nav_links = ''
+
+        nav_items.each do |item|
+            nav_links << content_tag("#{tag_type}") do
+                content_tag(:a, :href => "#{item[:url]}", class: "#{style} #{active? item[:url]}") do
+                    "#{item[:title]}"
+              end
+            end
+        end
+
+        nav_links.html_safe
+    end
+
+    def active? path
+        "active" if current_page? path
+    end
 end
+
+
+
+
+# concat link_to("About Me", about_me_path, :class => "#{style}")
+# concat link_to("Contact", contact_path, :class => "#{style}")
+# concat link_to("Blog", blogs_path, :class => "#{style}")
+# concat link_to("Portfolio", portfolios_path, :class => "#{style}")
