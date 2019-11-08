@@ -32,15 +32,17 @@ puts "10 blog posts created!"
 end
 
 puts "10 skills created!"
-
+count = 1
 9.times do
     Portfolio.create([{
         title: Faker::Name.name, 
         subtitle: Faker::Name.name,
         body: Faker::Lorem.sentence,
+        position: count,
         main_image: "https://via.placeholder.com/600x400",
         thumb_image: "https://via.placeholder.com/350x200"
     }])
+    count += 1
 end
 
 puts "9 portfolio created!"
