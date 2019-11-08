@@ -23,6 +23,10 @@ class Portfolio < ApplicationRecord
     # Constants Methods
     
     # Class methods
+
+    def self.by_position
+        order("position ASC")
+    end
     
     # Instance Public methods
 
