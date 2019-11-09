@@ -7,4 +7,4 @@ ready = ->
     $('.sortable').sortable()
     return
 
-$(document).ready ready
+$(document).ready readygithub
