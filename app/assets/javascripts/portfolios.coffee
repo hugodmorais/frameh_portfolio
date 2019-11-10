@@ -2,9 +2,30 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 ready = undefined
+set_positions = undefined
 
-ready = ->
-    $('.sortable').sortable()
+set_positions = -> 
+    $('.card').each (i) ->
+        $(this).attr 'data-pos', i + 1
+        return
     return
 
-$(document).ready readygithub
+ready = ->
+    set_positions()
+    $('.sortable').sortable()
+    $('.sortable').sortable().bind 'sortupdate', (e, ui) ->
+        updated_order = []
+        set_positions()
+        $('.card').each (i) ->
+            updated_order.push
+                id: $(this).data('id')
+                position: i + 1
+            return 
+        $.ajax
+            type: 'PUT'
+            url: '/portfolios/sort'
+            data: order: updated_order
+        return
+    return
+
+$(document).ready ready
