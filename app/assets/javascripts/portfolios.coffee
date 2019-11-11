@@ -28,4 +28,8 @@ ready = ->
         return
     return
 
+    # $.get $('#oi').data('url'), (data) ->
+    #     console.log(data)
+    #     $('#teste1').html data.data
+
 $(document).ready ready
