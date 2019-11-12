@@ -19,7 +19,8 @@ class Portfolio < ApplicationRecord
 
     # Validations
     validates :title, :body, :main_image, :thumb_image, presence: true
-    
+    mount_uploader :thumb_image, PortfolioUploader
+    mount_uploader :main_image, PortfolioUploader
     # Constants Methods
     
     # Class methods

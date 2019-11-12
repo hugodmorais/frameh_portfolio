@@ -35,6 +35,11 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 # gem 'mini_magick', '~> 4.8'
 gem 'friendly_id', '~> 5.2.4'
 gem "devise", ">= 4.7.1"
+
+gem 'carrierwave', '~> 0.11.2'
+gem 'mini_magick', '~> 4.5', '>= 4.5.1'
+gem 'carrierwave-aws', '~> 1.0'
+gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
