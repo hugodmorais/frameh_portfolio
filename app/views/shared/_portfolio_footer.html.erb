@@ -1,5 +1,13 @@
 <footer class="text-muted">
     <div class="container">
+            <%= video_tag(
+                'HardDrivePhotojpeg.mp4',
+                id: 'background_video',
+                autoplay: true,
+                loop: true,
+                muted: true,
+                poster: 'home'
+              ) %>
         <p class="float-right">
             <%= link_to "View All Portfolio Items", portfolios_path, class: "btn btn-info" %> /
             <a href="#", class="btn btn-info">Back to top</a>
