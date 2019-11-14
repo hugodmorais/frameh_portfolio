@@ -1,26 +1,15 @@
-<%= form_with(model: blog, local: true) do |f| %>
-  <% if blog.errors.any? %>
-    <div id="error_explanation">
-      <h4><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h4>
-      <ul>
-      <% blog.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<%= form_tag(blogs_path) do %>
   <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control' %>
+    <%= label_tag 'blog[title]', 'Blog title' %>
+    <%= text_field_tag 'blog[title]', blog.title, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :body %>
-    <%= f.text_area :body, class: 'form-control', rows: 10 %>
+    <%= label_tag 'blog[body]', 'Blog Content' %>
+    <%= text_area_tag 'blog[body]', blog.body, class: 'form-control', rows: 15 %>
   </div>
 
   <div class="form-group">
-    <%= f.submit 'Create Blog', class: 'btn btn-primary' %>
+    <%= submit_tag 'Save', class: 'btn btn-primary' %>
   </div>
 <% end %>
