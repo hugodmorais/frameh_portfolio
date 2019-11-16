@@ -1,7 +1,7 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio_item, only: [:show, :edit, :update, :destroy]
   layout "portfolio"
-  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all
+  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all
 
   def index
     @portfolio_items = Portfolio.by_position
@@ -20,7 +20,6 @@ class PortfoliosController < ApplicationController
 
   def new
     @portfolio_item = Portfolio.new
-    3.times { @portfolio_item.technologies.build }
   end
 
   def create
@@ -34,10 +33,13 @@ class PortfoliosController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def update
     respond_to do |format|
       if @portfolio_item.update(portfolio_item_params)
-          format.html { redirect_to @portfolio_item, notice: 'Portfolio was successfully updated.' }
+          format.html { redirect_to portfolio_show_path(@portfolio_item), notice: 'Portfolio was successfully updated.' }
       else
           format.html { render :edit }
       end

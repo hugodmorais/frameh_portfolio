@@ -1,11 +1,11 @@
 <div class="container portfolio-container">
   <div class="row">
     <div class="col-md-7">
-        <%= image_tag portfolio_img(@portfolio_item.thumb_image, 'main'), width: '90%' %>
+      <%= image_tag @portfolio_item.main_image.url, height: '350', width: '620', rotate: '90' if @portfolio_item.main_image.present? %>
     </div>
     <div class="col-md-5">
       <h1><%= @portfolio_item.title %></h1>
-
+      
       <hr>
 
       <em><%= @portfolio_item.subtitle %></em>
