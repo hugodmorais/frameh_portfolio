@@ -42,6 +42,8 @@ gem 'carrierwave-aws', '~> 1.0'
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 gem 'cocoon', '~> 1.2', '>= 1.2.9'
 gem 'gritter', '~> 1.2'
+
+gem 'twitter', '~> 6.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
