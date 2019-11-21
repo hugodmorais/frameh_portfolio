@@ -15,14 +15,6 @@
           <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
         </div>
 
-        <div class="row LoginCard">
-          <div class="col-xs-6 col-xs-offset-3">
-            <%= link_to "Sign in with Facebook",
-                user_facebook_omniauth_authorize_url(),
-                class: "btn btn-lg btn-primary" %>
-          </div>
-        </div>
-
         <% if devise_mapping.rememberable? %>
           <div class="form-group">
             <%= f.check_box :remember_me %>

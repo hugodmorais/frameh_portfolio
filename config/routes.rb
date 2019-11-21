@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
-  root to: 'users#index', via: :get
-  get 'auth/facebook', as: "auth_provider"
-  get 'auth/facebook/callback', to: 'users#login'
-  
+  # root to: 'users#index', via: :get
+
   resources :portfolios, except: [:show] do
     put :sort, on: :collection
   end

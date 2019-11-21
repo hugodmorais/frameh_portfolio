@@ -43,7 +43,6 @@ gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 gem 'cocoon', '~> 1.2', '>= 1.2.9'
 gem 'gritter', '~> 1.2'
 gem "figaro"
-gem 'omniauth-facebook'
 gem "koala", "~> 1.10.0rc"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
