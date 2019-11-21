@@ -16,7 +16,8 @@ class User < ApplicationRecord
   # Attributes
   
   # Associations
-  
+  has_many :comments, dependent: :destroy
+
   # Delegates
   
   # Constants

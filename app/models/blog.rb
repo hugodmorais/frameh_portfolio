@@ -7,7 +7,8 @@ class Blog < ApplicationRecord
     
     # Associations
     belongs_to :topic
-    
+    has_many :comments, dependent: :destroy
+
     # Delegates
     
     # Constants
