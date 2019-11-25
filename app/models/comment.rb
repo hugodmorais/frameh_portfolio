@@ -17,7 +17,7 @@ class Comment < ApplicationRecord
   # Callbacks
   
   # Validations
-  
+  validates :content, presence: true, length: { minimum: 5, maximun: 1000 }
   # Constants Methods
   
   # Class methods
