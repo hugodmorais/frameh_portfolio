@@ -43,6 +43,7 @@ class BlogsController < ApplicationController
       end
     end
   end
+  
 
   def destroy
     @blog.destroy
