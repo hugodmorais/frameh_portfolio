@@ -7,6 +7,7 @@ class BlogsController < ApplicationController
     @blogs = Blog.page(params[:page]).per(3)
     @page_title = "My Portfolio Blog"
   end
+  
 
   def show
     @blog = Blog.includes(:comments).friendly.find(params[:id])
