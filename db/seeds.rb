@@ -18,7 +18,7 @@ puts "3 topic created!"
     Blog.create([{
         title: Faker::Name.name, 
         body: Faker::Lorem.sentence,
-        topic_id: Topic.first
+        topic: Topic.first
     }])
 end
 
