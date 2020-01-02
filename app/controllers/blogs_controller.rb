@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   access all: [:show, :index], user: {except: [:destroy, :toogle_status, :new, :create, :update, :edit]}, site_admin: :all
 
   def index
-    @blogs = Blog.page(params[:page]).per(3)
+    @blogs = Blog.page(params[:page]).per(3).order(created_at: :desc)
     @page_title = "My Portfolio Blog"
   end
   
@@ -68,6 +68,6 @@ class BlogsController < ApplicationController
   end
 
   def blog_params
-    params.require(:blog).permit(:title, :body)
+    params.require(:blog).permit(:title, :body, :topic_id)
   end
 end

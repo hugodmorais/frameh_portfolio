@@ -5,6 +5,7 @@ class Topic < ApplicationRecord
     
     # Associations
     has_many :blogs
+    
     # Delegates
     
     # Constants
