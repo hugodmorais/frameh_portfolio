@@ -19,7 +19,7 @@ class Blog < ApplicationRecord
     # Callbacks
     
     # Validations
-    validates :title, :body, presence: true
+    validates :title, :body, :topic_id, presence: true
     
     # Constants Methods
     

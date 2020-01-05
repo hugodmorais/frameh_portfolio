@@ -1,5 +1,7 @@
 <div class="col-md-8 blog-main">
   <h2><%= @blog.title %></h2> 
+
+  <p><%= @blog.topic.title %></p>
   <% if logged_in?(:site_admin) %>
     <%= link_to 'Edit Blog', edit_blog_path(@blog), class: 'btn btn-info' %>
   <% end %>

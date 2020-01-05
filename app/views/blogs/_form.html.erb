@@ -10,11 +10,11 @@
   </div>
 
   <div class="form-group">
-    <%= f.text_area :body, class: 'form-control', placeholder: 'Body', rows: 10 %>
+    <%= f.collection_select :topic_id, Topic.all, :id, :title, { prompt: t('select_topic')}, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= f.collection_select :topic_id, Topic.all, :id, :title, { prompt: t('select_topic')}, class: 'form-control' %>
+    <%= f.text_area :body, class: 'form-control', placeholder: 'Body', rows: 10 %>
   </div>
 
   <div class="form-group">
