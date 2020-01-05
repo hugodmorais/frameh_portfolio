@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toogle_status]
+  before_action :set_sidebar_topics, except: [:update, :create, :destroy, :toogle_status]
   layout "blog"
   access all: [:show, :index], user: {except: [:destroy, :toogle_status, :new, :create, :update, :edit]}, site_admin: :all
 
@@ -69,6 +70,10 @@ class BlogsController < ApplicationController
 
   def set_blog
     @blog = Blog.friendly.find(params[:id])
+  end
+
+  def set_sidebar_topics
+    @sidebar_topics = Topic.with_blogs
   end
 
   def blog_params

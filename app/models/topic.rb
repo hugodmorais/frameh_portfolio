@@ -22,6 +22,9 @@ class Topic < ApplicationRecord
     # Class methods
     
     # Instance Public methods
+    def self.with_blogs
+        includes(:blogs).where.not(blogs: { id: nil })
+    end
     
     private
     

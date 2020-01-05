@@ -5,6 +5,13 @@
   </div>
 
   <div class="p-4">
+    <h4 class="font-italic">Topics</h4>
+    <% @sidebar_topics.each do |topic| %>
+      <%= link_to topic.title, topic_path(topic) %><br>
+    <% end %>
+  </div>
+
+  <div class="p-4">
     <h4 class="font-italic">Elsewhere</h4>
     <ol class="list-unstyled social-links">
       <div class="row">
