@@ -1,5 +1,12 @@
-<header class="blog-header py-3">
-    <div class="col-12 text-center">
-        <h2 class="blog-titler" href="#">Blog</h2>
-    </div>
-</header>
+<div class="blog-header">
+        <div class="container">
+          <h1 class="blog-title">My Blog</h1>
+          <p class="lead blog-description">An example blog template built with Bootstrap.</p>
+          <span>
+            <%= link_to 'Write a New Blog', new_blog_path if logged_in?(:site_admin) %>
+          </span>
+          <span>
+            <%= link_to "Topics", topics_path %>
+          </span>
+        </div>
+      </div>
