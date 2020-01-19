@@ -10,7 +10,7 @@ module FramehPortfolio
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
-
+    config.secret_key_base = ENV["SECRET_KEY_BASE"]
     Koala.config.api_version = 'v2.0'
     
     # Settings in config/environments/* take precedence over those specified here.
