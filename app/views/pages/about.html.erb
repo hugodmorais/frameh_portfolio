@@ -7,6 +7,22 @@
     <div class="row">
       <div class="col-md-4">
         <%= image_tag 'about.JPG', width: 250, alt: "about", class: "profile_img" %>
+        <div class="skills">
+          <% @skills.each do |skill| %>
+            <div class="skill">
+              <h5><%= skill.title %></h5>
+              <div class="progress">
+                <div
+                  class="progress-bar progress-bar-striped bg-warning"
+                  role="progressbar"
+                  aria-valuenow="<%= skill.percente_utilized %>"
+                  aria-valuemax="100"
+                  style="width: <%= skill.percente_utilized %>%"
+                ></div>
+              </div>
+            </div>
+          <% end %>
+        </div>
       </div>
 
       <div class="col-md-8">
